@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import './App.css';
 
-class ListItem extends Component {
-  render() {
-    return (
-      <li>
-        {this.props.doThis}
-        <button onClick={this.props.deleteItem}>X</button>
-      </li>
-    );
-  }
-}
+const ListItem = props => (
+  <div>
+    <li>
+      {props.doThis}
+      <button onClick={props.deleteItem}>X</button>
+    </li>
+  </div>
+)
 
 export default ListItem;

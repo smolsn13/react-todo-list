@@ -39,6 +39,12 @@ class MyList extends Component {
     this.textInput.focus()
   }
 
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.addItem(e)
+    }
+  }
+
   clearList = (e) => {
     e.preventDefault()
     this.setState({
@@ -75,7 +81,9 @@ class MyList extends Component {
           ref={el => {
             this.textInput = el
           }}
-          value={this.state.currentItem} onChange={this.handleChange} />
+          value={this.state.currentItem}
+          onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}/>
         <br />
         <br />
         <button onClick={this.addItem}>Add Item</button>
